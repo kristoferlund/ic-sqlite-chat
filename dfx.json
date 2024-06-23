@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "sql-test-backend": {
+      "candid": "src/sql-test-backend/sql-test-backend.did",
+      "package": "sql-test-backend",
+      "type": "rust"
+    },
+    "sql-test-frontend": {
+      "dependencies": [
+        "sql-test-backend"
+      ],
+      "source": [
+        "src/sql-test-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "sql-test-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
