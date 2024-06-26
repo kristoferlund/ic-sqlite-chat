@@ -7,7 +7,6 @@ export function useMessages() {
   return useQuery({
     queryKey: ["messages"],
     queryFn: async () => {
-      console.log("usePersons", promiser ? "promiser" : "NO promiser");
       if (!promiser) return null;
       return listAllMessages(promiser);
     },

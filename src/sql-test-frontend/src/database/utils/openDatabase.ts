@@ -14,5 +14,4 @@ export async function openDatabase(promiser: Promiser) {
   await promiser("open", {
     filename: `file:${DB_FILE}?vfs=opfs`,
   });
-  console.log("Database opened");
 }

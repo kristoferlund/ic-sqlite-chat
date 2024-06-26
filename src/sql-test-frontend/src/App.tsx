@@ -2,8 +2,6 @@ import Chat from "./components/Chat";
 import useDatabaseContext from "./database/hooks/useDatabaseContext";
 
 function App() {
-  console.log("RENDERING APP");
-
   const { isInitializing } = useDatabaseContext();
 
   return (

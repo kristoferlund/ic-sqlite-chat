@@ -23,7 +23,7 @@ export type DatabaseContextType = {
 };
 
 export const DatabaseContext = createContext<DatabaseContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export default function DatabaseProvider({
@@ -37,15 +37,11 @@ export default function DatabaseProvider({
   });
   const { data: newChanges } = useGetChanges(state.promiser);
 
-  console.log(state);
   // Initialize the database
   useEffect(() => {
     (async () => {
-      console.log("Initializing dastabase...");
       const promiser = await sqlite3Worker1Promiser.v2();
       await openDatabase(promiser);
-      console.log("Database initialized.");
-      console.log("Setting promiser");
       setState({ ...state, promiser, isInitializing: false });
     })();
   }, []);
