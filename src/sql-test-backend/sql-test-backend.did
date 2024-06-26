@@ -1,3 +1,12 @@
-service : {
-    "greet": (text) -> (text) query;
+type ChatInput = record { message : text };
+type Result = variant {
+  Ok : vec record { nat64; text; text; nat64; text };
+  Err : text;
+};
+service : () -> {
+  changes_get : (nat64) -> (
+      vec record { nat64; text; text; nat64; text },
+    ) query;
+  db_get : () -> (blob) query;
+  message_create : (ChatInput, nat64) -> (Result);
 }

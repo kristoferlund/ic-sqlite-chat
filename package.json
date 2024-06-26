@@ -12,7 +12,8 @@
     "test": "npm test --workspaces --if-present"
   },
   "type": "module",
-  "workspaces": [
-    "src/sql-test-frontend"
-  ]
+  "workspaces": ["src/sql-test-frontend"],
+  "devDependencies": {
+    "typescript": "^5.5.2"
+  }
 }
