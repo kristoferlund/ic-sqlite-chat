@@ -1,4 +1,5 @@
 import Chat from "./components/Chat";
+import Loader from "./components/Loader";
 import useDatabaseContext from "./database/hooks/useDatabaseContext";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   return (
     <main>
       <img src="/ic.svg" />
-      {isInitializing ? <p>Initializing...</p> : <Chat />}
+      {isInitializing ? <Loader /> : <Chat />}
     </main>
   );
 }
