@@ -1,8 +1,8 @@
 {
-  "sql-test-backend": {
+  "backend": {
     "ic": "ufmog-ciaaa-aaaal-qjglq-cai"
   },
-  "sql-test-frontend": {
+  "frontend": {
     "ic": "vicki-naaaa-aaaal-qjgma-cai"
   }
 }

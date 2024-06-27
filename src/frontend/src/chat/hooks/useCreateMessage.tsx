@@ -1,6 +1,6 @@
+import { backend } from "../../../../backend/declarations";
 import { getLatestChangeId } from "../../change/change.db";
 import { parseChangesResponse } from "../../change/utils/parseChangesResponse";
-import { sql_test_backend } from "../../../../sql-test-backend/declarations";
 import useDatabaseContext from "../../database/hooks/useDatabaseContext";
 import { useMutation } from "@tanstack/react-query";
 
@@ -12,7 +12,7 @@ export function useCreateMessage() {
     mutationFn: async ({ message }: { message: string }) => {
       if (!promiser) return null;
       const latestChangeId = await getLatestChangeId(promiser);
-      const result = await sql_test_backend.message_create(
+      const result = await backend.message_create(
         {
           message,
         },

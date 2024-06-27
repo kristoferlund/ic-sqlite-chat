@@ -1,16 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
 import { Promiser } from "@sqlite.org/sqlite-wasm";
 import { getLatestChangeId } from "../../change/change.db";
 import { parseChangesResponse } from "../../change/utils/parseChangesResponse";
-import { sql_test_backend } from "../../../../sql-test-backend/declarations";
+import { backend } from "../../../../backend/declarations";
+import { useQuery } from "@tanstack/react-query";
 
-export function useGetChanges(promiser: Promiser | undefined) {
+export function useGetDatabaseChanges(promiser: Promiser | undefined) {
   return useQuery({
-    queryKey: ["new_changes"],
+    queryKey: ["changes_get"],
     queryFn: async () => {
       if (!promiser) return;
       const latestId = await getLatestChangeId(promiser);
-      const rawChanges = await sql_test_backend.changes_get(BigInt(latestId));
+      const rawChanges = await backend.changes_get(BigInt(latestId));
       return parseChangesResponse(rawChanges);
     },
     refetchInterval: 10000,

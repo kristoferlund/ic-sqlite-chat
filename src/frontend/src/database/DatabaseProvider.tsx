@@ -1,10 +1,9 @@
 import { Promiser, sqlite3Worker1Promiser } from "@sqlite.org/sqlite-wasm";
 import React, { createContext, useEffect, useState } from "react";
-
 import { handleChanges } from "./handleChanges";
 import { openDatabase } from "./utils/openDatabase";
 import { queryClient } from "../main";
-import { useGetChanges } from "./hooks/useGetChanges";
+import { useGetDatabaseChanges } from "./hooks/useGetDatabaseChanges";
 
 export const DB_FILE = "db.sqlite";
 
@@ -35,7 +34,7 @@ export default function DatabaseProvider({
     isInitializing: true,
     isError: false,
   });
-  const { data: newChanges } = useGetChanges(state.promiser);
+  const { data: newChanges } = useGetDatabaseChanges(state.promiser);
 
   // Initialize the database
   useEffect(() => {

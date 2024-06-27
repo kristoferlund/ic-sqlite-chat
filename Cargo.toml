@@ -1,5 +1,3 @@
 [workspace]
-members = [
-    "src/sql-test-backend"
-]
+members = ["src/backend"]
 resolver = "2"

@@ -1,21 +1,21 @@
 {
   "canisters": {
-    "sql-test-backend": {
-      "candid": "src/sql-test-backend/sql-test-backend.did",
+    "backend": {
+      "candid": "src/backend/backend.did",
       "declarations": {
-        "output": "src/sql-test-backend/declarations"
+        "output": "src/backend/declarations"
       },
-      "package": "sql-test-backend",
+      "package": "backend",
       "type": "custom",
-      "wasm": "target/wasm32-wasi/release/sql_test_backend.wasm.gz"
+      "wasm": "target/wasm32-wasi/release/backend.wasm.gz"
     },
-    "sql-test-frontend": {
+    "frontend": {
       "declarations": {
-        "output": "src/sql-test-frontend/declarations"
+        "output": "src/frontend/declarations"
       },
-      "source": ["src/sql-test-frontend/dist"],
+      "source": ["src/frontend/dist"],
       "type": "assets",
-      "workspace": "sql-test-frontend"
+      "workspace": "frontend"
     }
   },
   "defaults": {

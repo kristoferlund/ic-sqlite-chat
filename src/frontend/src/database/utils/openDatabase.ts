@@ -1,6 +1,6 @@
-import { Promiser } from "@sqlite.org/sqlite-wasm";
-import { sql_test_backend } from "../../../../sql-test-backend/declarations";
 import { DB_FILE } from "../DatabaseProvider";
+import { Promiser } from "@sqlite.org/sqlite-wasm";
+import { backend } from "../../../../backend/declarations";
 
 export async function openDatabase(promiser: Promiser) {
   const opfsRoot = await navigator.storage.getDirectory();
@@ -8,7 +8,7 @@ export async function openDatabase(promiser: Promiser) {
     create: true,
   });
   const writable = await file.createWritable();
-  const db = await sql_test_backend.db_get();
+  const db = await backend.db_get();
   await writable.write(db as Uint8Array);
   await writable.close();
   await promiser("open", {
