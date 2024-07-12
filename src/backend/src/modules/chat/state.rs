@@ -1,13 +1,6 @@
-use candid::CandidType;
 use rusqlite::Connection;
-use serde::Deserialize;
 
-use crate::modules::db::db::create_change_triggers;
-
-#[derive(CandidType, Deserialize)]
-pub struct ChatInput {
-    pub message: String,
-}
+use crate::modules::db::create_change_triggers;
 
 pub fn init_db(db: &mut Connection) {
     db.execute(

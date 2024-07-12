@@ -1,6 +1,8 @@
 use ic_cdk::update;
 
-use crate::{Change, ChatInput, DB};
+use crate::{modules::change::Change, DB};
+
+use super::ChatInput;
 
 #[update]
 fn message_create(chat: ChatInput, changes_from_id: u64) -> Result<Vec<Change>, String> {

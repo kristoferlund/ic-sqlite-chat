@@ -3,7 +3,7 @@ create-canisters:
 
 deploy-backend:
 	export CC_wasm32_wasi="/opt/wasi-sdk/bin/clang" && \
-  export CFLAGS_wasm32_wasi="--sysroot=/opt/wasi-sdk/share/wasi-sysroot" && \
+    export CFLAGS_wasm32_wasi="--sysroot=/opt/wasi-sdk/share/wasi-sysroot" && \
 	cargo build --release --target wasm32-wasi && \
 	cd ./target/wasm32-wasi/release && \
 	wasi2ic backend.wasm backend.wasm && \

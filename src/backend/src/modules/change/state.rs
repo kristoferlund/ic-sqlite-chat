@@ -1,12 +1,6 @@
 use rusqlite::Connection;
 
-pub type Id = u64;
-pub type TableName = String;
-pub type Operation = String;
-pub type RowId = u64;
-pub type NewValues = String;
-
-pub type Change = (Id, TableName, Operation, RowId, NewValues);
+use crate::Change;
 
 pub fn init_db(db: &mut Connection) {
     db.execute(
