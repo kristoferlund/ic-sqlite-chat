@@ -1,4 +1,5 @@
 import Chat from "./components/Chat";
+import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import useDatabaseContext from "./database/hooks/useDatabaseContext";
 
@@ -9,6 +10,7 @@ function App() {
     <main>
       <img src="/ic.svg" />
       {isInitializing ? <Loader /> : <Chat />}
+      <Footer />
     </main>
   );
 }

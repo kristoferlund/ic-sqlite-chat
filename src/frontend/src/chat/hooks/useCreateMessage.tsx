@@ -16,7 +16,7 @@ export function useCreateMessage() {
         {
           message,
         },
-        latestChangeId
+        latestChangeId,
       );
       if ("Ok" in result) {
         const rawChanges = result.Ok;
