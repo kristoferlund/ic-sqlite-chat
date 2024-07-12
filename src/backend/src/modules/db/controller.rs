@@ -1,8 +1,8 @@
 use ic_cdk::query;
 
-use crate::{DB_FILE, ROOT_DIR};
+use crate::DB_FILE;
 
 #[query]
 fn db_get() -> Vec<u8> {
-    std::fs::read(format!("{}/{}", ROOT_DIR, DB_FILE)).unwrap()
+    std::fs::read(DB_FILE).unwrap()
 }

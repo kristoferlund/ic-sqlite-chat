@@ -13,4 +13,9 @@ pub fn init_db(db: &mut Connection) {
     .unwrap();
 
     create_change_triggers(db, "chat", &["message"]);
+
+    db.prepare("INSERT INTO chat (message) VALUES (?1)")
+        .unwrap()
+        .execute([&"Hello, world!"])
+        .unwrap();
 }
