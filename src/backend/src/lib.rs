@@ -1,6 +1,6 @@
 pub mod modules;
 
-use ic_cdk::{export_candid, init, post_upgrade, pre_upgrade};
+use ic_cdk::{export_candid, init, post_upgrade};
 use ic_stable_structures::memory_manager::{MemoryId, MemoryManager};
 use ic_stable_structures::DefaultMemoryImpl;
 use rusqlite::Connection;
