@@ -7,7 +7,7 @@
       },
       "package": "backend",
       "type": "custom",
-      "wasm": "target/wasm32-wasi/release/backend.wasm.gz"
+      "wasm": "target/wasm32-wasip1/release/backend.wasm.gz"
     },
     "frontend": {
       "declarations": {
